@@ -15,10 +15,7 @@ Polinom::Polinom(int grade, double coefficients[])
 Polinom::Polinom(Polinom *p)
 {
     this->grade = p->grade;
-    for (int i = 0; i <= grade; ++i)
-    {
-        this->coefficients[i] = p->coefficients[i];
-    }
+    this->coefficients = p->coefficients;
 }
 
 Polinom::~Polinom()

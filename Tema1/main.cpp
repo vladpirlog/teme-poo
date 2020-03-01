@@ -32,14 +32,16 @@ int main()
     Polinom *p1 = new Polinom(n1, arr1);
     Polinom *p2 = new Polinom(n2, arr2);
     Polinom *p1_copy_on_heap = new Polinom(p1);
-    Polinom *p3 = new Polinom();
     Polinom p2_copy_on_stack(*p2);
+    Polinom *p3 = new Polinom();
     Polinom p4(n4, arr4);
 
     cout << *p1;
     cout << "p1(3) = " << p1->value(3) << endl;
-    cout << "p2(1) = " << p2->value(1) << endl;
-    cout << "p3(1) = " << p1_copy_on_heap->value(1) << endl;
+    cout << "p1_copy_on_heap(3) = " << p1_copy_on_heap->value(3) << endl;
+    cout << "p2(2) = " << p2->value(2) << endl;
+    cout << "p2_copy_on_stack(2) = " << p2_copy_on_stack.value(2) << endl;
+    cout << "p4(3) = " << p4.value(3) << endl;
 
     Polinom res1 = (*p1) + (*p2);
     cout << "(p1 + p2)(1) = " << res1.value(1) << endl;
