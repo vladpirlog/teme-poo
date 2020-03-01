@@ -6,13 +6,10 @@ using namespace std;
 
 Polinom::Polinom() = default;
 
-Polinom::Polinom(int grade, double *coefficients)
+Polinom::Polinom(int grade, double coefficients[])
 {
     this->grade = grade;
-    for (int i = 0; i <= grade; ++i)
-    {
-        this->coefficients[i] = coefficients[i];
-    }
+    this->coefficients = coefficients;
 }
 
 Polinom::Polinom(Polinom *p)
