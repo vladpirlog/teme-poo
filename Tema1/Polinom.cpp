@@ -184,9 +184,7 @@ ostream &operator<<(ostream &os, Polinom &p)
 {
     os << "Grade: " << p.grade << "\nP(x) = ";
 
-    os << p.coefficients[p.grade] << " * x^" << p.grade;
-
-    for (int i = p.grade - 1; i >= 1; --i)
+    for (int i = p.grade; i >= 1; --i)
     {
         if (p.coefficients[i] > 0)
         {
@@ -205,6 +203,8 @@ ostream &operator<<(ostream &os, Polinom &p)
     else if (p.coefficients[0] < 0)
     {
         os << " - " << -p.coefficients[0] << endl;
+    } else {
+        os << endl;
     }
 
     return os;

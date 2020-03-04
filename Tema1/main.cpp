@@ -39,12 +39,14 @@ int main()
 
     cout << *p1;
     cout << *p2;
+    cout << "\n";
     cout << "p1(3) = " << p1->value(3) << endl;
     cout << "p1_copy_on_heap(3) = " << p1_copy_on_heap->value(3) << endl;
     cout << "p2(2) = " << p2->value(2) << endl;
     cout << "p2_copy_on_stack(2) = " << p2_copy_on_stack.value(2) << endl;
     cout << "p4(3) = " << p4.value(3) << endl;
 
+    cout << "\n";
     Polinom res1 = (*p1) + (*p2);
     cout << "(p1 + p2)(1) = " << res1.value(1) << endl;
 
