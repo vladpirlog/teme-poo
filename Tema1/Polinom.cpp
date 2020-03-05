@@ -117,6 +117,7 @@ Polinom Polinom::operator-(Polinom p)
             res->coefficients[i] -= p.coefficients[i];
         }
 
+        res->grade = 0;
         for (int j = this->grade; j >= 0; --j)
         {
             if (res->coefficients[j] != 0)
@@ -142,6 +143,7 @@ Polinom Polinom::operator-(Polinom p)
             res->coefficients[i] -= this->coefficients[i];
         }
 
+        res->grade = 0;
         for (int j = p.grade; j >= 0; --j)
         {
             if (res->coefficients[j] != 0)
@@ -157,7 +159,6 @@ Polinom Polinom::operator-(Polinom p)
 
 Polinom Polinom::operator*(Polinom p)
 {
-
     Polinom *res = new Polinom();
     delete[] res->coefficients;
     res->grade = this->grade + p.grade;

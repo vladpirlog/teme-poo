@@ -10,17 +10,17 @@ class Polinom
 
 public:
     Polinom();
-    Polinom(int, double*);
-    Polinom(const Polinom&);
+    Polinom(int, double *);
+    Polinom(const Polinom &);
     ~Polinom();
 
-    double value(int x);
-    Polinom operator+(Polinom p);
-    Polinom operator-(Polinom p);
-    Polinom operator*(Polinom p);
+    double value(int);
+    Polinom operator+(Polinom);
+    Polinom operator-(Polinom);
+    Polinom operator*(Polinom);
 
-    friend std::istream& operator>>(std::istream&, Polinom&);
-    friend std::ostream& operator<<(std::ostream&, Polinom&);
+    friend std::istream &operator>>(std::istream &, Polinom &);
+    friend std::ostream &operator<<(std::ostream &, Polinom &);
 };
 
 #endif
