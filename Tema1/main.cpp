@@ -24,8 +24,10 @@ void readPolynoms(int n)
 
 int main()
 {
-    int n1 = 2, n2 = 5, n4 = 4;
-    double arr1[] = {1, 2, 3};
+    int n1, n2 = 5, n4 = 4;
+    n1 = 5;
+    double arr1[] = {2, -4, -5, -6, 0, -2};
+    // double arr1[] = {1, 2, 3};
     double arr2[] = {-2, 4, 5, 6, 0, 2};
     double arr4[] = {3, -2, 0, -1, 1};
 

@@ -135,12 +135,12 @@ Polinom Polinom::operator-(Polinom p)
 
         for (int i = 0; i <= p.grade; ++i)
         {
-            res->coefficients[i] = p.coefficients[i];
+            res->coefficients[i] = -p.coefficients[i];
         }
 
         for (int i = 0; i <= this->grade; ++i)
         {
-            res->coefficients[i] -= this->coefficients[i];
+            res->coefficients[i] += this->coefficients[i];
         }
 
         res->grade = 0;
