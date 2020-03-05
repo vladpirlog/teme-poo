@@ -31,8 +31,8 @@ int main()
 
     Polinom *p1 = new Polinom(n1, arr1);
     Polinom *p2 = new Polinom(n2, arr2);
-    Polinom *p1_copy_on_heap = new Polinom(p1);
-    Polinom p2_copy_on_stack(p2);
+    Polinom *p1_copy_on_heap = new Polinom(*p1);
+    Polinom p2_copy_on_stack(*p2);
     Polinom *p3 = new Polinom();
     Polinom p4(n4, arr4);
     Polinom p5();

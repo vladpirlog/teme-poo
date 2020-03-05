@@ -10,8 +10,8 @@ class Polinom
 
 public:
     Polinom();
-    Polinom(int grade, double *coefficients);
-    Polinom(Polinom *p);
+    Polinom(int, double*);
+    Polinom(const Polinom&);
     ~Polinom();
 
     double value(int x);
