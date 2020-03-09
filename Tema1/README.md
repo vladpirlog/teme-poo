@@ -14,8 +14,8 @@ dinamice, se dezaloca zona de memorie utilizata);
 
 ### Cerinte comune tuturor temelor:
 - implementare in C++ folosind clase
-- ATENTIE: functiile pe care le-am numit mai jos metode (fie ca sunt supraincarcari de operatori, fie
-altfel de functii), pot fi implementate ca functii prieten in loc de metode ale claselor respective, daca se
+- ATENTIE: functiile pe care le-am numit mai jos metode (fie ca sunt supraincarcari de operatori, fie
+altfel de functii), pot fi implementate ca functii prieten in loc de metode ale claselor respective, daca se
 considera ca aceasta alegere este mai naturala;
 - supraincarcarea operatorilor &lt;&lt; si &gt;&gt; pentru iesiri si intrari de obiecte, dupa indicatiile de
 mai jos, astfel incat sa fie permise (si ilustrate in program):
