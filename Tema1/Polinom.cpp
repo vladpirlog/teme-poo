@@ -1,7 +1,6 @@
 #include "Polinom.h"
 #include <math.h>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -45,136 +44,133 @@ double Polinom::value(int x)
 
 Polinom Polinom::operator+(Polinom p)
 {
-    Polinom *res = new Polinom();
-    delete[] res->coefficients;
+    Polinom res = Polinom();
     if (this->grade > p.grade)
     {
-        res->coefficients = new double[this->grade + 1];
+        res.coefficients = new double[this->grade + 1];
 
         for (int i = 0; i <= this->grade; ++i)
         {
-            res->coefficients[i] = this->coefficients[i];
+            res.coefficients[i] = this->coefficients[i];
         }
 
         for (int i = 0; i <= p.grade; ++i)
         {
-            res->coefficients[i] += p.coefficients[i];
+            res.coefficients[i] += p.coefficients[i];
         }
 
         for (int j = this->grade; j >= 0; --j)
         {
-            if (res->coefficients[j] != 0)
+            if (res.coefficients[j] != 0)
             {
-                res->grade = j;
+                res.grade = j;
                 break;
             }
         }
 
-        return *res;
+        return res;
     }
     else
     {
-        res->coefficients = new double[p.grade + 1];
+        res.coefficients = new double[p.grade + 1];
 
         for (int i = 0; i <= p.grade; ++i)
         {
-            res->coefficients[i] = p.coefficients[i];
+            res.coefficients[i] = p.coefficients[i];
         }
 
         for (int i = 0; i <= this->grade; ++i)
         {
-            res->coefficients[i] += this->coefficients[i];
+            res.coefficients[i] += this->coefficients[i];
         }
 
         for (int j = p.grade; j >= 0; --j)
         {
-            if (res->coefficients[j] != 0)
+            if (res.coefficients[j] != 0)
             {
-                res->grade = j;
+                res.grade = j;
                 break;
             }
         }
 
-        return *res;
+        return res;
     }
 }
 
 Polinom Polinom::operator-(Polinom p)
 {
-    Polinom *res = new Polinom();
-    delete[] res->coefficients;
+    Polinom res = Polinom();
     if (this->grade > p.grade)
     {
-        res->coefficients = new double[this->grade + 1];
+        res.coefficients = new double[this->grade + 1];
 
         for (int i = 0; i <= this->grade; ++i)
         {
-            res->coefficients[i] = this->coefficients[i];
+            res.coefficients[i] = this->coefficients[i];
         }
 
         for (int i = 0; i <= p.grade; ++i)
         {
-            res->coefficients[i] -= p.coefficients[i];
+            res.coefficients[i] -= p.coefficients[i];
         }
 
-        res->grade = 0;
+        res.grade = 0;
         for (int j = this->grade; j >= 0; --j)
         {
-            if (res->coefficients[j] != 0)
+            if (res.coefficients[j] != 0)
             {
-                res->grade = j;
+                res.grade = j;
                 break;
             }
         }
 
-        return *res;
+        return res;
     }
     else
     {
-        res->coefficients = new double[p.grade + 1];
+        res.coefficients = new double[p.grade + 1];
 
         for (int i = 0; i <= p.grade; ++i)
         {
-            res->coefficients[i] = -p.coefficients[i];
+            res.coefficients[i] = -p.coefficients[i];
         }
 
         for (int i = 0; i <= this->grade; ++i)
         {
-            res->coefficients[i] += this->coefficients[i];
+            res.coefficients[i] += this->coefficients[i];
         }
 
-        res->grade = 0;
+        res.grade = 0;
         for (int j = p.grade; j >= 0; --j)
         {
-            if (res->coefficients[j] != 0)
+            if (res.coefficients[j] != 0)
             {
-                res->grade = j;
+                res.grade = j;
                 break;
             }
         }
 
-        return *res;
+        return res;
     }
 }
 
 Polinom Polinom::operator*(Polinom p)
 {
-    Polinom *res = new Polinom();
-    delete[] res->coefficients;
-    res->grade = this->grade + p.grade;
-    res->coefficients = new double[this->grade + p.grade + 1];
-    for (int i = 0; i <= res->grade; ++i)
+    Polinom res = Polinom();
+    res.grade = this->grade + p.grade;
+    res.coefficients = new double[this->grade + p.grade + 1];
+    for (int i = 0; i <= res.grade; ++i)
     {
-        res->coefficients[i] = 0;
+        res.coefficients[i] = 0;
     }
     for (int i = 0; i <= this->grade; ++i)
     {
         for (int j = 0; j <= p.grade; ++j)
         {
-            res->coefficients[i + j] += this->coefficients[i] * p.coefficients[j];
+            res.coefficients[i + j] += this->coefficients[i] * p.coefficients[j];
         }
     }
-    return *res;
+    return res;
 }
 
 istream &operator>>(istream &is, Polinom &p)
