@@ -48,7 +48,6 @@ Polinom Polinom::operator+(Polinom p)
     if (this->grade > p.grade)
     {
         res.coefficients = new double[this->grade + 1];
-
         for (int i = 0; i <= this->grade; ++i)
         {
             res.coefficients[i] = this->coefficients[i];
@@ -67,13 +66,10 @@ Polinom Polinom::operator+(Polinom p)
                 break;
             }
         }
-
-        return res;
     }
     else
     {
         res.coefficients = new double[p.grade + 1];
-
         for (int i = 0; i <= p.grade; ++i)
         {
             res.coefficients[i] = p.coefficients[i];
@@ -92,9 +88,8 @@ Polinom Polinom::operator+(Polinom p)
                 break;
             }
         }
-
-        return res;
     }
+    return res;
 }
 
 Polinom Polinom::operator-(Polinom p)
@@ -103,7 +98,6 @@ Polinom Polinom::operator-(Polinom p)
     if (this->grade > p.grade)
     {
         res.coefficients = new double[this->grade + 1];
-
         for (int i = 0; i <= this->grade; ++i)
         {
             res.coefficients[i] = this->coefficients[i];
@@ -123,13 +117,10 @@ Polinom Polinom::operator-(Polinom p)
                 break;
             }
         }
-
-        return res;
     }
     else
     {
         res.coefficients = new double[p.grade + 1];
-
         for (int i = 0; i <= p.grade; ++i)
         {
             res.coefficients[i] = -p.coefficients[i];
@@ -149,9 +140,8 @@ Polinom Polinom::operator-(Polinom p)
                 break;
             }
         }
-
-        return res;
     }
+    return res;
 }
 
 Polinom Polinom::operator*(Polinom p)
@@ -216,6 +206,5 @@ ostream &operator<<(ostream &os, Polinom &p)
     {
         os << endl;
     }
-
     return os;
 }

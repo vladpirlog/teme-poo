@@ -3,19 +3,19 @@
 
 using namespace std;
 
-void readPolynoms(int n)
+void readPolynomials(int n)
 {
     Polinom *arr = new Polinom[n];
 
     for (int i = 0; i < n; ++i)
     {
-        cout << "\n==== Input polynom " << i << " ====" << endl;
+        cout << "\n==== Input polynomial " << i << " ====" << endl;
         cin >> arr[i];
     }
 
     for (int i = 0; i < n; ++i)
     {
-        cout << "\n==== Output polynom " << i << " ====" << endl;
+        cout << "\n==== Output polynomial " << i << " ====" << endl;
         cout << arr[i];
     }
 
@@ -24,12 +24,12 @@ void readPolynoms(int n)
 
 int main()
 {
-    int n1, n2 = 5, n4 = 4;
-    n1 = 5;
     double arr1[] = {2, -4, -5, -6, 0, -2};
-    // double arr1[] = {1, 2, 3};
     double arr2[] = {-2, 4, 5, 6, 0, 2};
     double arr4[] = {3, -2, 0, -1, 1};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]) - 1;
+    int n2 = sizeof(arr2) / sizeof(arr2[0]) - 1;
+    int n4 = sizeof(arr4) / sizeof(arr4[0]) - 1;
 
     Polinom *p1 = new Polinom(n1, arr1);
     Polinom *p2 = new Polinom(n2, arr2);
@@ -64,9 +64,9 @@ int main()
 
     // Citirea si afisarea a n polinoame
     int n;
-    cout << "Enter number of polynoms: ";
+    cout << "Enter number of polynomials: ";
     cin >> n;
-    readPolynoms(n);
+    readPolynomials(n);
 
     // Eliberarea memoriei alocata dinamic
     delete p1;
