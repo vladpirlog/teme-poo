@@ -22,6 +22,7 @@ public:
     void operator=(const Complex &);
     Complex operator+(const Complex &);
     Complex operator-(const Complex &);
+    Complex operator*(const Complex &);
 };
 
 #endif //COMPLEX_H
