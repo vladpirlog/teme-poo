@@ -33,8 +33,19 @@ Matrice::Matrice(const Matrice &m)
 
 Matrice::~Matrice()
 {
-    for (int i = 0; i < 100; ++i)
+    for (int i = 0; i < 40; ++i)
     {
         delete[](this->v)[i];
+    }
+}
+
+void Matrice::operator=(const Matrice &m)
+{
+    for (int i = 0; i < 40; ++i)
+    {
+        for (int j = 0; j < 40; j++)
+        {
+            (this->v)[i][j] = (m.v)[i][j];
+        }
     }
 }

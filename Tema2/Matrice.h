@@ -17,10 +17,10 @@ public:
     virtual Complex at(int, int) = 0;
     virtual void put(Complex, int, int) = 0;
 
-    // virtual friend std::istream &operator>>(std::istream &, Matrice &);
-    // virtual friend std::ostream &operator<<(std::ostream &, const Matrice &);
+    friend std::istream &operator>>(std::istream &, Matrice &);
+    friend std::ostream &operator<<(std::ostream &, const Matrice &);
 
-    // virtual void operator=(const Matrice &);
+    void operator=(const Matrice &);
 };
 
 #endif // MATRICE_H
