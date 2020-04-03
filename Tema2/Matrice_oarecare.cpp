@@ -19,11 +19,20 @@ void Matrice_oarecare::put(Complex value, int x, int y)
         (this->v)[x][y] = value;
 }
 
+bool Matrice_oarecare::isDiagonal()
+{
+    for (int i = 0; i < this->lin; ++i)
+        for (int j = 0; j < this->col; ++j)
+            if ((this->v)[i][j] != Complex(0, 0) && i != j)
+                return false;
+    return true;
+}
+
 std::istream &operator>>(std::istream &is, Matrice_oarecare &m)
 {
-    std::cout << "Enter number of lines:\n";
+    std::cout << "Introduceti nr de linii:\n";
     is >> m.lin;
-    std::cout << "Enter number of columns:\n";
+    std::cout << "Introduceti nr de coloane:\n";
     is >> m.col;
 
     for (int i = 0; i < m.lin; ++i)

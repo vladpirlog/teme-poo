@@ -15,6 +15,7 @@ public:
 
     Complex at(int, int);
     void put(Complex, int, int);
+    bool isDiagonal();
 
     friend std::istream &operator>>(std::istream &, Matrice_oarecare &);
     friend std::ostream &operator<<(std::ostream &, const Matrice_oarecare &);
