@@ -19,9 +19,23 @@ void Matrice_patratica::put(Complex value, int x, int y)
         (this->v)[x][y] = value;
 }
 
+Complex Matrice_patratica::calcDeterminant() const
+{
+    return Complex(0, 0);
+}
+
+bool Matrice_patratica::isDiagonal()
+{
+    for (int i = 0; i < this->dim; ++i)
+        for (int j = 0; j < this->dim; ++j)
+            if((this->v)[i][j] != Complex(0, 0) && i != j)
+                return false;
+    return true;            
+}
+
 std::istream &operator>>(std::istream &is, Matrice_patratica &m)
 {
-    std::cout << "Enter number of lines/columns for square matrix:\n";
+    std::cout << "Introduceti nr de linii/coloane din matricea patratica:\n";
     is >> m.dim;
 
     for (int i = 0; i < m.dim; ++i)
@@ -45,6 +59,8 @@ std::ostream &operator<<(std::ostream &os, const Matrice_patratica &m)
         }
         os << "\n";
     }
+
+    os << "Determinantul este: " << m.calcDeterminant() << "\n";
     return os;
 }
 
