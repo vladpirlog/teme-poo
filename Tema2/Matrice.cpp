@@ -1,16 +1,23 @@
 #include "Matrice.h"
 
+#define MATRIX_SIZE 40
+
 Matrice::Matrice()
 {
-    this->v = new Complex *[40];
-    for (int i = 0; i < 40; ++i)
+    this->v = new Complex *[MATRIX_SIZE];
+    for (int i = 0; i < MATRIX_SIZE; ++i)
     {
-        (this->v)[i] = new Complex[40];
+        (this->v)[i] = new Complex[MATRIX_SIZE];
     }
 }
 
 Matrice::Matrice(int lin, int col, Complex **v)
 {
+    this->v = new Complex *[MATRIX_SIZE];
+    for (int i = 0; i < MATRIX_SIZE; ++i)
+    {
+        (this->v)[i] = new Complex[MATRIX_SIZE];
+    }
     for (int i = 0; i < lin; ++i)
     {
         for (int j = 0; j < col; j++)
@@ -20,20 +27,9 @@ Matrice::Matrice(int lin, int col, Complex **v)
     }
 }
 
-Matrice::Matrice(const Matrice &m)
-{
-    for (int i = 0; i < 40; ++i)
-    {
-        for (int j = 0; j < 40; j++)
-        {
-            (this->v)[i][j] = (m.v)[i][j];
-        }
-    }
-}
-
 Matrice::~Matrice()
 {
-    for (int i = 0; i < 40; ++i)
+    for (int i = 0; i < MATRIX_SIZE; ++i)
     {
         delete[](this->v)[i];
     }

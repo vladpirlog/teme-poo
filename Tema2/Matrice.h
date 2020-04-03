@@ -11,11 +11,12 @@ protected:
 public:
     Matrice();
     Matrice(int, int, Complex **);
-    Matrice(const Matrice &);
     ~Matrice();
 
     virtual Complex at(int, int) = 0;
     virtual void put(Complex, int, int) = 0;
+
+    virtual bool isDiagonal() = 0;
 };
 
 #endif // MATRICE_H
