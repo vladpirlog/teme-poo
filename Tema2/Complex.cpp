@@ -66,6 +66,9 @@ std::istream &operator>>(std::istream &is, Complex &p)
 
 std::ostream &operator<<(std::ostream &os, const Complex &p)
 {
-    os << p.re << "+" << p.im << "j\n";
+    if (p.im >= 0)
+        os << p.re << "+" << p.im << "j\n";
+    else
+        os << p.re << "-" << -p.im << "j\n";
     return os;
 }
