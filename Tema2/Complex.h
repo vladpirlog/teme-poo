@@ -23,6 +23,7 @@ public:
     Complex operator+(const Complex &);
     Complex operator-(const Complex &);
     Complex operator*(const Complex &);
+    Complex operator/(const Complex &);
     bool operator!=(const Complex &);
 };
 
