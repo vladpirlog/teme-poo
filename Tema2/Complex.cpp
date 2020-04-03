@@ -39,6 +39,18 @@ void Complex::operator=(const Complex &x)
     this->im = x.im;
 }
 
+Complex Complex::operator+(const Complex &x)
+{
+    Complex c = Complex(this->re + x.re, this->im + x.im);
+    return c;
+}
+
+Complex Complex::operator-(const Complex &x)
+{
+    Complex c = Complex(this->re - x.re, this->im - x.im);
+    return c;
+}
+
 std::istream &operator>>(std::istream &is, Complex &p)
 {
     float r, i;
