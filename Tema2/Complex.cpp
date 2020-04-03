@@ -20,7 +20,7 @@ Complex::Complex(const Complex &n)
 
 Complex::~Complex()
 {
-    std::cout << "Number deleted.\n";
+    // std::cout << "Number deleted.\n";
 }
 
 float Complex::getRe()
@@ -64,7 +64,8 @@ std::istream &operator>>(std::istream &is, Complex &p)
     return is;
 }
 
-std::ostream &operator<<(std::ostream &, const Complex &p)
+std::ostream &operator<<(std::ostream &os, const Complex &p)
 {
-    std::cout << p.re << "+" << p.im << "j\n";
+    os << p.re << "+" << p.im << "j\n";
+    return os;
 }

@@ -18,9 +18,10 @@ public:
 
     friend std::istream &operator>>(std::istream &, Complex &);
     friend std::ostream &operator<<(std::ostream &, const Complex &);
+
     void operator=(const Complex &);
-    Complex operator+(const Complex&);
-    Complex operator-(const Complex&);
+    Complex operator+(const Complex &);
+    Complex operator-(const Complex &);
 };
 
-#endif COMPLEX_H
+#endif //COMPLEX_H
