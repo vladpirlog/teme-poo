@@ -54,6 +54,11 @@ Complex Complex::operator*(const Complex &x)
     return Complex(this->re * x.re - this->im * x.im, this->re * x.im + this->im * x.re);
 }
 
+bool Complex::operator!=(const Complex &x)
+{
+    return this->re != x.re || this->im != x.im;
+}
+
 std::istream &operator>>(std::istream &is, Complex &p)
 {
     float r, i;
