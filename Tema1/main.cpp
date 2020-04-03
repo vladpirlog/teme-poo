@@ -37,7 +37,9 @@ int main()
     Polinom p2_copy_on_stack(*p2);
     Polinom *p3 = new Polinom();
     Polinom p4(n4, arr4);
-    Polinom p5();
+    Polinom p5 = Polinom();
+    Polinom p6 = Polinom();
+    Polinom p7 = p5 + p6;
 
     // Afisare p1 si p2 sub forma P(x) = a * x^n + b * x^(n - 1) + ...
     cout << *p1;

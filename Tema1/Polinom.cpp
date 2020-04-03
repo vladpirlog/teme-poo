@@ -3,7 +3,10 @@
 
 using namespace std;
 
-Polinom::Polinom() = default;
+Polinom::Polinom()
+{
+    this->coefficients = new double[1];
+};
 
 Polinom::Polinom(int grade, double *coefficients)
 {
