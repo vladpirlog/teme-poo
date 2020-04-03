@@ -11,6 +11,7 @@ protected:
 public:
     Matrice();
     Matrice(int, int, Complex **);
+    Matrice(const Matrice &);
     ~Matrice();
 
     virtual Complex at(int, int) = 0;
