@@ -56,7 +56,18 @@ Complex Complex::operator*(const Complex &x)
 
 Complex Complex::operator/(const Complex &x)
 {
-    return *this * Complex(x.re, -1 * x.im) / Complex(x.re * x.re, x.im * x.im);
+    // return *this * Complex(x.re, -1 * x.im) / Complex(x.re * x.re, x.im * x.im);
+    if (x.re == 0 && x.im == 0)
+    {
+        return Complex(99999, 99999);
+    }
+    return Complex((this->re * x.re + this->im * x.im) / (x.re * x.re + x.im * x.im),
+                   (this->im * x.re - this->re * x.im) / (x.re * x.re + x.im * x.im));
+}
+
+bool Complex::operator==(const Complex &x)
+{
+    return this->re == x.re && this->im == x.im;
 }
 
 bool Complex::operator!=(const Complex &x)
