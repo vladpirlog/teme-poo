@@ -80,8 +80,8 @@ std::istream &operator>>(std::istream &is, Complex &p)
 std::ostream &operator<<(std::ostream &os, const Complex &p)
 {
     if (p.im >= 0)
-        os << p.re << "+" << p.im << "j\n";
+        os << p.re << "+" << p.im << "j";
     else
-        os << p.re << "-" << -p.im << "j\n";
+        os << p.re << "-" << -p.im << "j";
     return os;
 }
