@@ -10,12 +10,14 @@ private:
 
 public:
     Matrice_patratica();
+    Matrice_patratica(int);
     Matrice_patratica(int, Complex**);
     Matrice_patratica(const Matrice_patratica &);
 
     Complex at(int, int);
     void put(Complex, int, int);
-    Complex calcDeterminant();
+    Complex calcDeterminant() const;
+    bool isDiagonal();
 
     friend std::istream &operator>>(std::istream &, Matrice_patratica &);
     friend std::ostream &operator<<(std::ostream &, const Matrice_patratica &);
