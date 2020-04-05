@@ -11,22 +11,8 @@ Matrice::Matrice()
     }
 }
 
-Matrice::Matrice(int lin, int col)
+Matrice::Matrice(int lin, int col, Complex **v) : Matrice::Matrice()
 {
-    this->v = new Complex *[MATRIX_SIZE];
-    for (int i = 0; i < MATRIX_SIZE; ++i)
-    {
-        (this->v)[i] = new Complex[MATRIX_SIZE];
-    }
-}
-
-Matrice::Matrice(int lin, int col, Complex **v)
-{
-    this->v = new Complex *[MATRIX_SIZE];
-    for (int i = 0; i < MATRIX_SIZE; ++i)
-    {
-        (this->v)[i] = new Complex[MATRIX_SIZE];
-    }
     for (int i = 0; i < lin; ++i)
     {
         for (int j = 0; j < col; ++j)
@@ -36,13 +22,8 @@ Matrice::Matrice(int lin, int col, Complex **v)
     }
 }
 
-Matrice::Matrice(const Matrice &m)
+Matrice::Matrice(const Matrice &m) : Matrice::Matrice()
 {
-    this->v = new Complex *[MATRIX_SIZE];
-    for (int i = 0; i < MATRIX_SIZE; ++i)
-    {
-        (this->v)[i] = new Complex[MATRIX_SIZE];
-    }
     for (int i = 0; i < MATRIX_SIZE; ++i)
     {
         for (int j = 0; j < MATRIX_SIZE; ++j)

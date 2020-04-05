@@ -2,19 +2,13 @@
 
 Matrice_oarecare::Matrice_oarecare() : Matrice(){};
 
-Matrice_oarecare::Matrice_oarecare(int lin, int col) : Matrice(lin, col)
-{
-    this->lin = lin;
-    this->col = col;
-}
-
-Matrice_oarecare::Matrice_oarecare(int lin, int col, Complex **v) : Matrice(lin, col, v)
+Matrice_oarecare::Matrice_oarecare(int lin, int col, Complex **v) : Matrice::Matrice(lin, col, v)
 {
     this->lin = lin;
     this->col = col;
 };
 
-Matrice_oarecare::Matrice_oarecare(const Matrice_oarecare &m) : Matrice(m)
+Matrice_oarecare::Matrice_oarecare(const Matrice_oarecare &m) : Matrice::Matrice(m)
 {
     this->lin = m.lin;
     this->col = m.col;

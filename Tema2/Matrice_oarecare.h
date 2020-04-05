@@ -10,7 +10,6 @@ private:
 
 public:
     Matrice_oarecare();
-    Matrice_oarecare(int, int);
     Matrice_oarecare(int, int, Complex**);
     Matrice_oarecare(const Matrice_oarecare &);
 

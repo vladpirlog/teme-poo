@@ -10,7 +10,6 @@ private:
 
 public:
     Matrice_patratica();
-    Matrice_patratica(int);
     Matrice_patratica(int, Complex**);
     Matrice_patratica(const Matrice_patratica &);
 
