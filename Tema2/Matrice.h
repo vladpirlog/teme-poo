@@ -10,6 +10,7 @@ protected:
 
 public:
     Matrice();
+    Matrice(int, int);
     Matrice(int, int, Complex **);
     Matrice(const Matrice &);
     ~Matrice();
