@@ -1,6 +1,6 @@
 #include "Matrice_oarecare.h"
 
-Matrice_oarecare::Matrice_oarecare() : Matrice(){};
+Matrice_oarecare::Matrice_oarecare(){};
 
 Matrice_oarecare::Matrice_oarecare(int lin, int col, Complex **v) : Matrice::Matrice(lin, col, v)
 {

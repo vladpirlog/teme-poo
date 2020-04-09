@@ -1,6 +1,6 @@
 #include "Matrice_patratica.h"
 
-Matrice_patratica::Matrice_patratica() : Matrice::Matrice(){};
+Matrice_patratica::Matrice_patratica(){};
 
 Matrice_patratica::Matrice_patratica(int dim, Complex **v) : Matrice::Matrice(dim, dim, v) { this->dim = dim; };
 
