@@ -1,4 +1,5 @@
 #include "Matrice.h"
+#include "EmptyMatrix.h"
 
 #define MATRIX_SIZE 40
 
@@ -13,6 +14,10 @@ Matrice::Matrice()
 
 Matrice::Matrice(int lin, int col, Complex **v) : Matrice::Matrice()
 {
+    if (lin <= 0 || col <= 0)
+    {
+        throw(EmptyMatrix());
+    }
     for (int i = 0; i < lin; ++i)
     {
         for (int j = 0; j < col; ++j)
