@@ -38,9 +38,9 @@ bool Matrice_oarecare::isDiagonal()
 
 std::istream &operator>>(std::istream &is, Matrice_oarecare &m)
 {
-    std::cout << "Introduceti nr de linii:\n";
+    std::cout << "Introduceti nr de linii din matricea oarecare:\n";
     is >> m.lin;
-    std::cout << "Introduceti nr de coloane:\n";
+    std::cout << "Introduceti nr de coloane din matricea oarecare:\n";
     is >> m.col;
 
     for (int i = 0; i < m.lin; ++i)
@@ -56,6 +56,7 @@ std::istream &operator>>(std::istream &is, Matrice_oarecare &m)
 
 std::ostream &operator<<(std::ostream &os, const Matrice_oarecare &m)
 {
+    os << "\n";
     for (int i = 0; i < m.lin; ++i)
     {
         for (int j = 0; j < m.col; ++j)
@@ -64,6 +65,7 @@ std::ostream &operator<<(std::ostream &os, const Matrice_oarecare &m)
         }
         os << "\n";
     }
+    os << "\n";
     return os;
 }
 

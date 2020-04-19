@@ -81,6 +81,7 @@ std::istream &operator>>(std::istream &is, Matrice_patratica &m)
 
 std::ostream &operator<<(std::ostream &os, const Matrice_patratica &m)
 {
+    os << "\n";
     for (int i = 0; i < m.dim; ++i)
     {
         for (int j = 0; j < m.dim; ++j)
@@ -90,7 +91,7 @@ std::ostream &operator<<(std::ostream &os, const Matrice_patratica &m)
         os << "\n";
     }
 
-    os << "Determinantul este: " << m.calcDeterminant() << "\n";
+    os << "\nDeterminantul este: " << m.calcDeterminant() << "\n";
     return os;
 }
 
