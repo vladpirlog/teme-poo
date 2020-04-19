@@ -1,4 +1,5 @@
 #include "Matrice_patratica.h"
+#include "EmptyMatrix.h"
 
 Matrice_patratica::Matrice_patratica(){};
 
@@ -67,7 +68,9 @@ std::istream &operator>>(std::istream &is, Matrice_patratica &m)
 {
     std::cout << "Introduceti nr de linii/coloane din matricea patratica:\n";
     is >> m.dim;
-
+    if(m.dim <= 0){
+        throw(EmptyMatrix());
+    }
     for (int i = 0; i < m.dim; ++i)
     {
         for (int j = 0; j < m.dim; j++)

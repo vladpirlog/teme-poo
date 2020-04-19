@@ -1,4 +1,5 @@
 #include "Matrice_oarecare.h"
+#include "EmptyMatrix.h"
 
 Matrice_oarecare::Matrice_oarecare(){};
 
@@ -42,7 +43,9 @@ std::istream &operator>>(std::istream &is, Matrice_oarecare &m)
     is >> m.lin;
     std::cout << "Introduceti nr de coloane din matricea oarecare:\n";
     is >> m.col;
-
+    if(m.lin <= 0 || m.col <= 0){
+        throw(EmptyMatrix());
+    }
     for (int i = 0; i < m.lin; ++i)
     {
         for (int j = 0; j < m.col; j++)
