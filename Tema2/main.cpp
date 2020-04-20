@@ -84,6 +84,13 @@ int main()
         cout << "Matrice patratica 3:\n"
              << mp3 << endl;
 
+        Matrice_oarecare *mo4 = new Matrice_oarecare(lin, col, vOarecare);
+        Matrice_patratica *mp4 = new Matrice_patratica(dim, vPatratica);
+        cout << "Matrice oarecare 4:\n"
+             << *mo4 << endl;
+        cout << "Matrice patratica 4:\n"
+             << *mp4 << endl;
+
         int n;
         cout << "Introduceti nr de matrici oarecare ce tb citite si afisate:\n";
         cin >> n;
