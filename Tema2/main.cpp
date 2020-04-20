@@ -1,6 +1,7 @@
 #include "Matrice_patratica.h"
 #include "Matrice_oarecare.h"
 #include "EmptyMatrix.h"
+#include "NotAFloat.h"
 
 using namespace std;
 
@@ -54,7 +55,7 @@ int main()
         cin >> mo1;
         cout << "mo1[0][1] = " << mo1.at(0, 1) << endl;
 
-        Matrice_oarecare mo2(mo1);
+        Matrice_oarecare mo2 = mo1;
         cout << "Matrice oarecare 2:\n"
              << mo2 << endl;
         cout << "Matrice oarecare 2 este diagonala: " << mo2.isDiagonal() << endl;
@@ -101,7 +102,11 @@ int main()
     }
     catch (const EmptyMatrix &e)
     {
-        cout << e.what();
+        cout << e.what() << "\n";
+    }
+    catch (const NotAFloat &e)
+    {
+        cout << e.what() << "\n";
     }
     return 0;
 }

@@ -1,4 +1,6 @@
 #include "Complex.h"
+#include "NotAFloat.h"
+#include <string>
 
 Complex::Complex()
 {
@@ -56,7 +58,6 @@ Complex Complex::operator*(const Complex &x)
 
 Complex Complex::operator/(const Complex &x)
 {
-    // return *this * Complex(x.re, -1 * x.im) / Complex(x.re * x.re, x.im * x.im);
     if (x.re == 0 && x.im == 0)
     {
         return Complex(99999, 99999);
@@ -77,19 +78,26 @@ bool Complex::operator!=(const Complex &x)
 
 std::istream &operator>>(std::istream &is, Complex &p)
 {
-    float r, i;
-    std::cout << "Enter Re: ";
-    is >> r;
-    p.re = r;
-    std::cout << "Enter Im: ";
-    is >> i;
-    p.im = i;
-
-    return is;
+    try
+    {
+        std::string r, i;
+        std::cout << "Enter Re: ";
+        is >> r;
+        p.re = std::stof(r);
+        std::cout << "Enter Im: ";
+        is >> i;
+        p.im = std::stof(i);
+        return is;
+    }
+    catch (const std::invalid_argument &e)
+    {
+        throw(NotAFloat());
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, const Complex &p)
 {
+    os << std::setprecision(4);
     if (p.im >= 0)
         os << p.re << "+" << p.im << "j";
     else
