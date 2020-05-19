@@ -48,8 +48,21 @@ void citireSiAfisare()
 	std::set<std::tuple<Persoana *, Film *, float>>::iterator it = structura.begin();
 	while (it != structura.end())
 	{
-		std::cout << "\nPersoana:\n";
-		std::cout << *(std::get<0>(*it));
+		std::cout << "\n";
+		if (dynamic_cast<Actor *>(std::get<0>(*it)) != nullptr)
+		{
+			std::cout << *(dynamic_cast<Actor *>(std::get<0>(*it)));
+		}
+		else if (dynamic_cast<Regizor *>(std::get<0>(*it)) != nullptr)
+		{
+			std::cout << *(dynamic_cast<Regizor *>(std::get<0>(*it)));
+		}
+		else
+		{
+			std::cout << *(std::get<0>(*it));
+		}
+		std::cout << "\n";
+
 		std::cout << "\nFilmul:\n";
 		std::cout << *(std::get<1>(*it));
 		std::cout << "\nBonusul:\n";
