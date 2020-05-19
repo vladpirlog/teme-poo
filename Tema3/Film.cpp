@@ -4,11 +4,24 @@ Film::Film() : nume(""), tip(""), durata(0) {}
 
 Film::Film(std::string nume, std::string tip, int durata) : nume(nume), tip(tip), durata(durata) {}
 
+Film::Film(const Film &f)
+{
+    this->nume = f.nume;
+    this->tip = f.tip;
+    this->durata = f.durata;
+}
+
+Film::~Film()
+{
+    // std::cout << "Persoana stearsa.\n";
+}
+
 Film &Film::operator=(const Film &f)
 {
     this->nume = f.nume;
     this->tip = f.tip;
     this->durata = f.durata;
+    return *this;
 }
 
 std::istream &operator>>(std::istream &is, Film &f)

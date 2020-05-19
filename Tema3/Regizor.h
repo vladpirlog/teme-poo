@@ -3,13 +3,22 @@
 
 #include "Persoana.h"
 
-class Regizor : private Persoana
+class Regizor : public Persoana
 {
 private:
     float sumaFixa;
+
 public:
     Regizor();
-    Regizor(std::string, std::string, std::string, float, float);
+    Regizor(int, std::string, std::string, float, float);
+    Regizor(const Regizor &);
+
+    Regizor &operator=(const Regizor &);
+    void afisare();
+    float getBonus();
+
+    friend std::istream &operator>>(std::istream &, Regizor &);
+    friend std::ostream &operator<<(std::ostream &, const Regizor &);
 };
 
 #endif // REGIZOR_H

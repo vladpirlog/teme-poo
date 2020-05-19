@@ -2,9 +2,7 @@
 #define FILM_H
 
 #include <string>
-#include <set>
-#include <tuple>
-#include "Persoana.h"
+#include <iostream>
 
 class Film
 {
@@ -12,11 +10,12 @@ private:
     std::string nume;
     std::string tip;
     int durata;
-    // std::set<std::tuple<Persoana, Film, Bonus>> arr;
 
 public:
     Film();
     Film(std::string, std::string, int);
+    Film(const Film&);
+    virtual ~Film();
 
     Film &operator=(const Film &);
 

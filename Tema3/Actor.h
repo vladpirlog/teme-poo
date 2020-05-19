@@ -3,16 +3,24 @@
 
 #include "Persoana.h"
 
-class Actor : private Persoana
+class Actor : public Persoana
 {
 private:
     bool personajPrincipal;
-    static const float bonusPersonajPrincipal = 10;
+    static float bonusPersonajPrincipal;
+
 public:
     Actor();
     Actor(int, std::string, std::string, float, bool);
+    Actor(const Actor &);
 
-    static float getBonusPersonajPrincipal();
+    Actor &operator=(const Actor &);
+    float getBonus();
+    bool estePersonajPrincipal();
+    void afisare();
+
+    friend std::istream &operator>>(std::istream &, Actor &);
+    friend std::ostream &operator<<(std::ostream &, const Actor &);
 };
 
 #endif // ACTOR_H

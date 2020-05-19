@@ -10,7 +10,7 @@ Persoana::Persoana(int cnp,
                                             numeFilm(numeFilm),
                                             procentIncasari(procentIncasari) {}
 
-Persoana &Persoana::operator=(const Persoana &p)
+Persoana::Persoana(const Persoana &p)
 {
     this->cnp = p.cnp;
     this->nume = p.nume;
@@ -18,17 +18,56 @@ Persoana &Persoana::operator=(const Persoana &p)
     this->procentIncasari = p.procentIncasari;
 }
 
+Persoana::~Persoana()
+{
+    // std::cout << "Persoana stearsa.\n";
+}
+
+float Persoana::getBonus()
+{
+    return this->procentIncasari;
+}
+
+Persoana &Persoana::operator=(const Persoana &p)
+{
+    this->cnp = p.cnp;
+    this->nume = p.nume;
+    this->numeFilm = p.numeFilm;
+    this->procentIncasari = p.procentIncasari;
+    return *this;
+}
+
+void Persoana::afisare()
+{
+    std::cout << "CNP: " << this->cnp << "\n";
+    std::cout << "Nume: " << this->nume << "\n";
+    std::cout << "Nume film: " << this->numeFilm << "\n";
+    std::cout << "Procent incasari: " << this->procentIncasari << "\n";
+}
+
 std::istream &operator>>(std::istream &is, Persoana &p)
 {
-    std::cout << "CNP: ";
-    is >> p.cnp;
-    std::cout << "Nume: ";
-    is >> p.nume;
-    std::cout << "Nume film: ";
-    is >> p.numeFilm;
-    std::cout << "Procent incasari: ";
-    is >> p.procentIncasari;
-    return is;
+    try
+    {
+        std::string n;
+        std::cout << "CNP: ";
+        is >> n;
+        p.cnp = std::stoi(n);
+        std::cout << "Nume: ";
+        is >> p.nume;
+        std::cout << "Nume film: ";
+        is >> p.numeFilm;
+        std::cout << "Procent incasari: ";
+        is >> n;
+        p.procentIncasari = std::stof(n);
+        if (p.procentIncasari > 100 || p.procentIncasari < 0)
+            throw(InvalidPercentage());
+        return is;
+    }
+    catch (const std::invalid_argument &e)
+    {
+        throw(InvalidType());
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, const Persoana &p)
