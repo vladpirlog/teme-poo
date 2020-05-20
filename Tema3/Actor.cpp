@@ -30,12 +30,17 @@ Actor &Actor::operator=(const Actor &a)
     return *this;
 }
 
-float Actor::getBonus()
+float Actor::getBonus() const
 {
     return this->procentIncasari + (this->personajPrincipal ? Actor::bonusPersonajPrincipal : 0);
 }
 
-bool Actor::estePersonajPrincipal()
+float Actor::getBonusPersonajPrincipal()
+{
+    return Actor::bonusPersonajPrincipal;
+}
+
+bool Actor::estePersonajPrincipal() const
 {
     return this->personajPrincipal;
 }

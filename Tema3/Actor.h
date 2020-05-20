@@ -15,8 +15,9 @@ public:
     Actor(const Actor &);
 
     Actor &operator=(const Actor &);
-    float getBonus();
-    bool estePersonajPrincipal();
+    float getBonus() const;
+    static float getBonusPersonajPrincipal();
+    bool estePersonajPrincipal() const;
     void afisare();
 
     friend std::istream &operator>>(std::istream &, Actor &);

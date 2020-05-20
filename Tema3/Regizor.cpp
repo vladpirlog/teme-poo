@@ -26,7 +26,7 @@ Regizor &Regizor::operator=(const Regizor &r)
 	return *this;
 }
 
-float Regizor::getBonus()
+float Regizor::getBonus() const
 {
 	return this->procentIncasari + this->sumaFixa;
 }

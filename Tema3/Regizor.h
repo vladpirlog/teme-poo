@@ -15,7 +15,7 @@ public:
 
     Regizor &operator=(const Regizor &);
     void afisare();
-    float getBonus();
+    float getBonus() const;
 
     friend std::istream &operator>>(std::istream &, Regizor &);
     friend std::ostream &operator<<(std::ostream &, const Regizor &);

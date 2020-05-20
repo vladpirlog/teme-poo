@@ -22,7 +22,7 @@ public:
 
     Persoana &operator=(const Persoana &);
     virtual void afisare();
-    virtual float getBonus();
+    virtual float getBonus() const;
 
     friend std::istream &operator>>(std::istream &, Persoana &);
     friend std::ostream &operator<<(std::ostream &, const Persoana &);

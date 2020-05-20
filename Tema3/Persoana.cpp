@@ -23,7 +23,7 @@ Persoana::~Persoana()
     // std::cout << "Persoana stearsa.\n";
 }
 
-float Persoana::getBonus()
+float Persoana::getBonus() const
 {
     return this->procentIncasari;
 }
